@@ -37,4 +37,6 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
     implementation 'com.jakewharton.rxbinding3:rxbinding:3.1.0'
     implementation "com.google.guava:guava:28.2-android"
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation "androidx.recyclerview:recyclerview-selection:1.1.0-rc01"
 }

@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity"></activity>
-        <activity android:name=".reports.Reports"></activity>
+        <activity android:name=".reports.ReportsActivity"></activity>
         <activity android:name=".aboutUs.AboutUs"></activity>
         <activity
             android:name=".SplashScreen"
