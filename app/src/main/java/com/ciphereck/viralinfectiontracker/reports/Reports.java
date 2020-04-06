@@ -8,8 +8,6 @@ public class Reports extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        System.out.println("Report Activity Got Initialized");
+        System.out.println(StatisticsClientInstance.getInstance().getCountryStatistics().size());
     }
-
 }

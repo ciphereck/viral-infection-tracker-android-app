@@ -6,6 +6,8 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.ciphereck.viralinfectiontracker.retrofit.statistics.RetrofitStatisticsHelper;
+
 import static java.lang.Thread.sleep;
 
 public class SplashScreen extends AppCompatActivity {
@@ -23,8 +25,14 @@ public class SplashScreen extends AppCompatActivity {
 
     private void runAllThreads() {
         Thread changeScreenThread = new Thread(() -> changeScreen());
+        Thread fetchDataThread = new Thread(() -> fetchData());
 
         changeScreenThread.start();
+        fetchDataThread.start();
+    }
+
+    public void fetchData() {
+        RetrofitStatisticsHelper.updateCountryStatistics();
     }
 
     public void changeScreen() {
