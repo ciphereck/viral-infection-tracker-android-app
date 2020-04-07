@@ -1,4 +1,4 @@
-package com.ciphereck.viralinfectiontracker.retrofit;
+package com.ciphereck.viralinfectiontracker.retrofit.statistics;
 
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory;
 import retrofit2.Retrofit;

@@ -3,7 +3,6 @@ package com.ciphereck.viralinfectiontracker.retrofit.statistics;
 
 import com.ciphereck.viralinfectiontracker.reports.StateStatistics;
 import com.ciphereck.viralinfectiontracker.reports.StatisticsClientInstance;
-import com.ciphereck.viralinfectiontracker.retrofit.RetrofitClientInstance;
 import com.ciphereck.viralinfectiontracker.retrofit.RetrofitStatisticsRoutes;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
