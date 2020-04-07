@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="dp_3x">24dp</dimen>
+    <dimen name="dp_4x">48dp</dimen>
     <dimen name="dp_7x">128dp</dimen>
     <dimen name="dp_half">4dp</dimen>
     <dimen name="dp_6x">64dp</dimen>
