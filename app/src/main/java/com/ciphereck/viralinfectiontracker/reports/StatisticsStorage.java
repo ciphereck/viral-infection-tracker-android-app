@@ -40,7 +40,6 @@ public class StatisticsStorage {
             totalCases+= statistics.get(i).getTotalCases();
             totalDeaths+= statistics.get(i).getTotalDeaths();
             totalRecovered+= statistics.get(i).getTotalRecovered();
-            totalRecovered+= statistics.get(i).getTotalRecovered();
             totalActiveCases+= statistics.get(i).getTotalActiveCases();
             totalCriticalCases+= statistics.get(i).getTotalCriticalCases();
             totalTestsPerformed+= statistics.get(i).getTotalTestsPerformed();

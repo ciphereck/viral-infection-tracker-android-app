@@ -23,7 +23,8 @@ public class RetrofitStatisticsHelper {
                 .subscribeOn(Schedulers.computation())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe((countryStatistics) -> StatisticsClientInstance.getInstance()
-                                                        .setCountryStatisticsList(countryStatistics));
+                                                        .setCountryStatisticsList(countryStatistics),
+                        (err) -> System.out.println(err.getMessage()));
     }
 
     public static void updateStateStatistics() {
@@ -35,7 +36,8 @@ public class RetrofitStatisticsHelper {
                 .map(RetrofitStatisticsHelper::convertJsonElementToStateStatisticsList)
                 .subscribeOn(Schedulers.computation())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(((stateStatistics -> StatisticsClientInstance.getInstance().setStateStatistics(stateStatistics))));
+                .subscribe(((stateStatistics -> StatisticsClientInstance.getInstance().setStateStatistics(stateStatistics))),
+                        (err) -> System.out.println(err.getMessage()));
     }
 
     public static List<StateStatistics> convertJsonElementToStateStatisticsList(JsonElement jsonElement) {
