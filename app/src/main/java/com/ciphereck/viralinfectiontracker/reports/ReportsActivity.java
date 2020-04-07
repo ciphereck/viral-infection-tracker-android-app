@@ -20,6 +20,7 @@ public class ReportsActivity extends AppCompatActivity {
 
         setContentView(R.layout.statistics_list);
         initRecyclerView();
+        System.out.println(StatisticsClientInstance.getInstance().getStateStatistics().get(0).getTotalCases());
     }
 
     private void initRecyclerView() {

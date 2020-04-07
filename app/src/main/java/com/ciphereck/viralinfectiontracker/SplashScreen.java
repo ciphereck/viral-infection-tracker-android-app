@@ -32,6 +32,7 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     public void fetchData() {
+        RetrofitStatisticsHelper.updateStateStatistics();
         RetrofitStatisticsHelper.updateCountryStatistics();
     }
 
