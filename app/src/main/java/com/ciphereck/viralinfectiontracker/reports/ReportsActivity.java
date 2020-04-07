@@ -30,6 +30,4 @@ public class ReportsActivity extends AppCompatActivity {
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
         recyclerView.setAdapter(adapter);
     }
-
-
 }

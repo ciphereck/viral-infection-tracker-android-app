@@ -10,15 +10,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ciphereck.viralinfectiontracker.R;
 
-import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 public class CountryStatisticAdapter extends RecyclerView.Adapter<CountryStatisticAdapter.ViewHolder> {
 
-    private Collection<CountryStatistics> listItems;
+    private List<CountryStatistics> listItems;
     private Context context;
 
-    public CountryStatisticAdapter(Collection<CountryStatistics> listItems, Context context) {
-        this.listItems = listItems;
+    public CountryStatisticAdapter(List<CountryStatistics> listItems, Context context) {
+        this.listItems = Collections.synchronizedList(listItems);
         this.context = context;
     }
 
@@ -31,8 +32,8 @@ public class CountryStatisticAdapter extends RecyclerView.Adapter<CountryStatist
 
     @Override
     public void onBindViewHolder(CountryStatisticAdapter.ViewHolder holder, int position) {
-        final CountryStatistics listItem = (CountryStatistics) listItems.toArray()[position];
-        holder.countryName.setText(listItem.getCountryName());
+        final CountryStatistics listItem = (CountryStatistics) listItems.get(position);
+        holder.countryName.setText(listItem.getCountryName() + " " + listItem.getTotalCases());
     }
 
     @Override
