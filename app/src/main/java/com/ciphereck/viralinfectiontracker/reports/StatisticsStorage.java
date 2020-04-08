@@ -18,7 +18,7 @@ public class StatisticsStorage {
     }
 
     public void setCountryStatisticsList(List<CountryStatistics> countryStatisticsList) {
-        countryStatisticsList.add(0, getTotalCases(countryStatisticsList));
+        countryStatisticsList.add(0, this.getTotalCases(countryStatisticsList));
         this.countryStatisticsList.clear();
         this.countryStatisticsList.addAll(countryStatisticsList);
     }
@@ -32,7 +32,7 @@ public class StatisticsStorage {
         this.stateStatistics.addAll(stateStatistics);
     }
 
-    public CountryStatistics getTotalCases(List<CountryStatistics> statistics) {
+    private CountryStatistics getTotalCases(List<CountryStatistics> statistics) {
         Integer totalCases = 0, totalDeaths = 0, totalRecovered = 0;
         Integer totalActiveCases = 0, totalCriticalCases = 0, totalTestsPerformed = 0;
         Double irrelevant = Double.valueOf(0);
