@@ -1,10 +1,18 @@
 package com.ciphereck.viralinfectiontracker.reports;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.LinearLayout;
 import android.util.DisplayMetrics;
 import android.widget.TextView;
 
@@ -17,6 +25,9 @@ import com.github.mikephil.charting.data.PieEntry;
 import java.util.ArrayList;
 
 public class ReportsActivity extends AppCompatActivity {
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private Toolbar appBar;
     PieChart worldActivePieChart, worldClosedPieChart, countryTotalPieChart;
     TextView worldActive, worldClosed, worldTotal, worldTotalTest;
     TextView countryActive, countryTotal, countryDeath, countryRecovered;
@@ -26,6 +37,10 @@ public class ReportsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.statistics_list);
+        appBar=findViewById(R.id.app_bar_reports);
+        setSupportActionBar(appBar);
 
         setContentView(R.layout.activtity_reports_main);
         initView();
@@ -142,5 +157,14 @@ public class ReportsActivity extends AppCompatActivity {
         pieChart.getDescription().setEnabled(false);
         pieChart.setDrawSliceText(false);
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
 
+        getMenuInflater().inflate(R.menu.search_bar,menu);
+        MenuItem menuItem = menu.findItem(R.id.app_bar_search);
+        SearchView searchView = (SearchView)menuItem.getActionView();
+        searchView.setQueryHint("Search Country");
+
+        return super.onCreateOptionsMenu(menu);
+    }
 }
