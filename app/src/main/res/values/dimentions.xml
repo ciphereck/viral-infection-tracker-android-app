@@ -3,7 +3,12 @@
     <dimen name="dp_3x">24dp</dimen>
     <dimen name="dp_4x">48dp</dimen>
     <dimen name="dp_7x">128dp</dimen>
+    <dimen name="dp_8x">256dp</dimen>
+    <dimen name="dp_25x">200dp</dimen>
+    <dimen name="dp_20x">160dp</dimen>
+    <dimen name="dp_15x">120dp</dimen>
     <dimen name="dp_half">4dp</dimen>
+    <dimen name="dp_one_forth">4dp</dimen>
     <dimen name="dp_6x">64dp</dimen>
     <dimen name="dp_6.5x">96dp</dimen>
 </resources>

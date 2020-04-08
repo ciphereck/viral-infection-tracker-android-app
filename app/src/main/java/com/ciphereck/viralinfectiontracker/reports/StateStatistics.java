@@ -33,4 +33,16 @@ public class StateStatistics {
     public Integer getTotalCases() {
         return totalCases;
     }
+
+    public Integer getTotalDeaths() {
+        return totalDeaths;
+    }
+
+    public Integer getTotalRecovered() {
+        return totalRecovered;
+    }
+
+    public Integer getTotalActiveCases() {
+        return totalActiveCases;
+    }
 }
