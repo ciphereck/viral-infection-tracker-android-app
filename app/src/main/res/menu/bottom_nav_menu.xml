@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_world"
+        android:title="@string/bottom_navigation_world" />
+
+    <item
+        android:id="@+id/navigation_state"
+        android:title="@string/bottom_navigation_state" />
+
+    <item
+        android:id="@+id/navigation_city"
+        android:title="@string/bottom_navigation_city" />
+
+</menu>

@@ -2,4 +2,8 @@
     <string name="app_name">Viral Infection Tracker</string>
     <string name="show_reports">Show Reports</string>
     <string name="about_us">About Us</string>
+
+    <string name="bottom_navigation_world">World data</string>
+    <string name="bottom_navigation_state">State wise</string>
+    <string name="bottom_navigation_city">City wise</string>
 </resources>
