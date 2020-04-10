@@ -1,11 +1,17 @@
 package com.ciphereck.viralinfectiontracker.reports;
 
-import androidx.appcompat.app.AppCompatActivity;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.ciphereck.viralinfectiontracker.R;
@@ -16,21 +22,38 @@ import com.github.mikephil.charting.data.PieEntry;
 
 import java.util.ArrayList;
 
-public class ReportsActivity extends AppCompatActivity {
+public class ReportsActivity extends Fragment {
     PieChart worldActivePieChart, worldClosedPieChart, countryTotalPieChart;
     TextView worldActive, worldClosed, worldTotal, worldTotalTest;
     TextView countryActive, countryTotal, countryDeath, countryRecovered;
     CountryStatistics worldData = null;
     StateStatistics countryData = null;
+    private View fragmentView = null;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
-        setContentView(R.layout.activtity_reports_main);
+        return inflater.inflate(R.layout.activtity_reports_main, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        fragmentView=view;
+
         initView();
         updateData();
     }
+
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//
+//        setContentView(R.layout.activtity_reports_main);
+//        initView();
+//        updateData();
+//    }
 
     private void initView() {
         if(StatisticsClientInstance.getInstance().getCountryStatistics().size() > 0) {
@@ -39,18 +62,18 @@ public class ReportsActivity extends AppCompatActivity {
         if(StatisticsClientInstance.getInstance().getStateStatistics().size() > 0) {
             countryData = StatisticsClientInstance.getInstance().getStateStatistics().get(0);
         }
-        worldActive = findViewById(R.id.world_active);
-        worldClosed = findViewById(R.id.world_closed);
-        worldActivePieChart = findViewById(R.id.world_pieChart_active);
-        worldClosedPieChart = findViewById(R.id.world_pieChart_inactive);
-        worldTotal = findViewById(R.id.world_total);
-        worldTotalTest = findViewById(R.id.world_total_test);
+        worldActive = fragmentView.findViewById(R.id.world_active);
+        worldClosed = fragmentView.findViewById(R.id.world_closed);
+        worldActivePieChart = fragmentView.findViewById(R.id.world_pieChart_active);
+        worldClosedPieChart = fragmentView.findViewById(R.id.world_pieChart_inactive);
+        worldTotal = fragmentView.findViewById(R.id.world_total);
+        worldTotalTest = fragmentView.findViewById(R.id.world_total_test);
 
-        countryTotal = findViewById(R.id.country_total);
-        countryActive = findViewById(R.id.country_total_active);
-        countryDeath = findViewById(R.id.country_total_deaths);
-        countryRecovered = findViewById(R.id.country_total_recovered);
-        countryTotalPieChart = findViewById(R.id.country_pieChart_total);
+        countryTotal = fragmentView.findViewById(R.id.country_total);
+        countryActive = fragmentView.findViewById(R.id.country_total_active);
+        countryDeath = fragmentView.findViewById(R.id.country_total_deaths);
+        countryRecovered = fragmentView.findViewById(R.id.country_total_recovered);
+        countryTotalPieChart = fragmentView.findViewById(R.id.country_pieChart_total);
     }
 
     private void updateData() {

@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.ciphereck.viralinfectiontracker.aboutUs.AboutUs;
 import com.ciphereck.viralinfectiontracker.reports.ReportsActivity;
+import com.ciphereck.viralinfectiontracker.reports.ReportsNavigation;
 import com.jakewharton.rxbinding3.view.RxView;
 
 import io.reactivex.Observable;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void navigationInitialization() {
-        mapButtonToScreen(getClickObservable(showReportButton), ReportsActivity.class);
+        mapButtonToScreen(getClickObservable(showReportButton), ReportsNavigation.class);
         mapButtonToScreen(getClickObservable(showAboutUsButton), AboutUs.class);
     }
 

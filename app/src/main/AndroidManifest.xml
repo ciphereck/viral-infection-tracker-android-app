@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ciphereck.viralinfectiontracker">
-
-<!--    Permissions-->
-    <uses-permission android:name="android.permission.INTERNET" />
-
+    <!-- Permissions -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".reports.ReportsActivity"></activity>
-        <activity android:name=".aboutUs.AboutUs"></activity>
+        <activity android:name=".reports.ReportsNavigation"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".reports.ReportsActivity" />
+        <activity android:name=".aboutUs.AboutUs" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashScreenTheme">
@@ -25,5 +23,7 @@
             </intent-filter>
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
